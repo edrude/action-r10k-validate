@@ -1,0 +1,15 @@
+name: 'r10k Check'
+description: 'Check puppetfile syntax'
+
+inputs:
+  puppetfile:
+    description: 'Path of the puppetfile we are going to check'
+    required: false
+runs:
+  using: docker
+  image: Dockerfile
+  env:
+    PUPPETFILE: ${{ inputs.puppetfile }}
+branding:
+  color: blue
+  icon: check-square
